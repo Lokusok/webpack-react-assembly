@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": "warn",
+    "prefer-const": "warn",
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": ["error", { "code": 120 }]
+  }
+}

@@ -1,0 +1,18 @@
+$button-bg: coral;
+
+.button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $button-bg;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-bg;
+    color: #fff;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,20 @@
+.card {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 6px;
+  max-width: 300px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.preview {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.link {
+  color: blue;
+}
