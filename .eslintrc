@@ -2,12 +2,15 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended"],
   "rules": {
     "no-unused-vars": "error",
     "no-console": "warn",
     "prefer-const": "warn",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
-    "max-len": ["error", { "code": 120 }]
+    "max-len": ["error", { "code": 120 }],
+    "indent": ["warn", 2],
+    "react/react-in-jsx-scope": "off"
   }
 }

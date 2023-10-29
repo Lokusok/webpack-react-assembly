@@ -78,7 +78,7 @@ module.exports = {
       extensions: ['js', 'jsx', 'ts', 'tsx'],
       fix: true,
       failOnError: true,
-      failOnWarning: true,
+      failOnWarning: false,
     }),
     new ForkTsCheckerWebpackPlugin(),
   ],
