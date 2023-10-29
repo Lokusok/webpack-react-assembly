@@ -1,17 +1,25 @@
+'use strict';
+
 const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const mode = process.env.mode || 'development';
+
 module.exports = {
+  mode,
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     assetModuleFilename: 'assets/[hash][ext][query]',
+    clean: true,
   },
+  devtool: mode === 'development' ? 'source-map' : false,
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -36,10 +44,11 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
+              sourceMap: mode === 'development',
               importLoaders: 1,
             },
           },
@@ -50,11 +59,13 @@ module.exports = {
       {
         test: /\.module\.css$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                localIdentName: '[local]_m_[hash:base64:8]',
+              },
               importLoaders: 1,
             },
           },
@@ -62,8 +73,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|webp|avif|gif)/i,
-        type: 'asset/resource',
+        test: /\.(jpe?g|png|webp|avif|gif|ico)/i,
+        type: mode === 'production' ? 'asset' : 'asset/resource',
       },
       {
         test: /\.(woff|woff2|ttf|otf)/i,
@@ -73,6 +84,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './index.html' }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new webpack.ProvidePlugin({ React: 'react' }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],

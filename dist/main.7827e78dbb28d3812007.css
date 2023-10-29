@@ -1,0 +1,51 @@
+.button_m_hBGLxw_y {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid coral;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  background: #fff;
+}
+
+  .button_m_hBGLxw_y:hover {
+    background-color: coral;
+    color: #fff;
+  }
+
+  .button_m_hBGLxw_y:active {
+    opacity: 0.4;
+  }
+
+.card_m_PpamoqsH {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 6px;
+  max-width: 300px;
+  background: #fff;
+}
+
+.title_m_Yvc0kUpU {
+  font-size: 20px;
+}
+
+.preview_m_zH0PnNQ_ {
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.link_m_bFfBJ94Q {
+  color: blue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+
+body {
+  background: #ccc;
+}
+

@@ -5,7 +5,7 @@ const App: React.FC = () => {
   return (
     <>
       <Button />
-      <Card title="Как ходят ёжики" />
+      <Card title={'Как кодят ёжики'} />
     </>
   );
 };

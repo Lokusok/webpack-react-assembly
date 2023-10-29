@@ -6,6 +6,7 @@ $button-bg: coral;
   font-size: 18px;
   font-family: Arial, sans-serif;
   cursor: pointer;
+  background: #fff;
 
   &:hover {
     background-color: $button-bg;
