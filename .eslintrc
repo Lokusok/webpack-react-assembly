@@ -4,14 +4,15 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended"],
   "rules": {
-    "no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
     "no-console": "warn",
     "prefer-const": "warn",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", { "code": 120, "ignorePattern": "d=\"([\\s\\S]*?)\"" }],
     "indent": ["warn", 2],
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }
